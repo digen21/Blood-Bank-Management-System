@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Registration</title>
+    <link rel="stylesheet" href="homecss.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="../public/font/all.css">
+    <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- header  -->
+    <%- include('../includes/_header2.ejs')%>
+        <!-- /header -->
+
+        <div class="reg-container">
+            <div class="img">
+                <img src="donate.webp" alt="">
+            </div>
+
+            <div class="txt-content">
+                <h2>Sign Up</h2>
+                <div class="social-icon">
+                    <a href="" id="aicon"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="" id="aicon2"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="login-form">
+                <form action="/donor_reg" method="post">
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="text" name="email" placeholder="example@gmail.com">
+                    <input type="text" name="password" placeholder="Password">
+                    <input type="text" name="cpassword" placeholder="Confirm Password">
+                    <button type="submit">Register</button>
+                </form>
+                <p class="text-center">Already a member? <a href="/donor_login">Sign In</a></p>
+            </div>
+        </div>
+
+
+</body>
+
+</html>

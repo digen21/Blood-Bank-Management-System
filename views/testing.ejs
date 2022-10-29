@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- onSubmit="submitResponse()" -->
+
+
+        <form action="" method="">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">status</th>
+                        <!-- <th scope="col">Password</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <% dataList.forEach(dbc=> {%>
+                        <tr>
+                            <th data_id= <%= dbc.id %>><%= dbc._id %></th>
+                                <td><%= dbc.email %></td>
+                                    <td><%= dbc.status ??" pending" %></td> %></td>
+                                    <td><button type="button" data-id="<%=dbc._id%>"
+                                            onclick="handleApprove(this)"
+                                            id="submit" class="approve">Approve</button></td>
+                                    <td><button type="button" data-id="<%=dbc._id%>"
+                                            onclick="handleReject(this)"
+                                            id="reject" class="reject">Reject</button></td>
+                                </tr>
+                                <%})%>
+                                </tbody>
+                            </table>
+                        </form>
+                        <script src="../jquery.min.js"></script>
+    <script>
+
+
+function handleApprove(e)
+{
+    const id=e.getAttribute("data-id");
+    if(!id){
+        alert("ID not found")
+    }else{
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            dataType: "json",
+            url: "/approve",
+            data: JSON.stringify({
+                id:id,
+                
+            }),
+            success: function(res){
+                console.log(res);
+            },
+            error: function(response) {
+                console.log(response);
+            },
+        });
+        location.reload();
+    }
+    
+}
+function handleReject(e)
+{
+    const id=e.getAttribute("data-id");
+    if(!id){
+        alert("ID not found")
+    }else{
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            dataType: "json",
+            url: "/reject",
+            data: JSON.stringify({
+                id:id,
+                
+            }),
+            success: function(res){
+                console.log(res);
+            },
+            error: function(response) {
+                console.log(response);
+            },
+        });
+        location.reload();
+    }
+    
+}
+
+
+
+    </script>
+                        <!-- <script src = "../index1.js"></script> -->
+                    </body>
+                </html>

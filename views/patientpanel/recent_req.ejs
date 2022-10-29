@@ -1,0 +1,123 @@
+<link rel="stylesheet" href="css/style3.css">
+<link rel="stylesheet" href="font/all.css">
+<script src="font/all.js"> </script>
+<link rel="stylesheet" href="css/sidenav.css">
+<link rel="stylesheet" href="css/homepage.css">
+<link rel="stylesheet" href="css/table.css">
+<style>
+    h2 {
+        text-align: center;
+        color: #fff;
+        font-size: 2rem;
+    }
+</style>
+
+
+<body>
+    <header>
+        <a href="#" class="logo"><img src="/img/logo4.png" alt=""></a>
+        <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+
+        <ul class="navlist">
+            <li>
+                <form action="/p_logout" method="post" style=" border: 1px solid #ddd; padding: 5px 10px;">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    <button class="dropbtn" id="click"
+                        style="color: black;font-weight: 600; padding: 5px;font-size: 1.2rem;">Logout
+                    </button>
+
+                </form>
+            </li>
+        </ul>
+    </header>
+
+
+    <div class="sidenav" style="margin-top: 100px;">
+        <a href="/patient_dashboard">Dashboard</a>
+        <a href="/blood_req">Make Request</a>
+        <a href="/recent_req">Recent Request</a>
+    </div>
+
+
+    <div class="data">
+        <h2>Donor History</h2>
+        <form action="">
+            <table>
+                <thead>
+                    <!-- Heading Of The Table   -->
+                    <tr class="headtr">
+                        <th class="width">Id</th>
+                        <th class="width2">First Name</th>
+                        <th class="width2">Last Name</th>
+                        <th class="width2">DOB</th>
+                        <th class="width3">Mobile</th>
+                        <th class="width3">Email</th>
+                        <th class="width2">Gender</th>
+                        <th class="width2">Age</th>
+                        <th class="width4">Bloodgroup</th>
+                        <th class="width2">Disease</th>
+                        <th class="width2">Blood Required</th>
+                        <th class="width2">Address</th>
+                        <th class="width2">Town</th>
+                        <th class="width2">Status</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% dataList.forEach(data=> {%>
+                        <tr class="tr">
+                            <td class="width ">
+                                <%= data._id %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.firstname %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.lastname %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.dob %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.mob %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.email %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.gender %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.age %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.bloodgroup %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.disease %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.ml %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.address %>
+                            </td>
+                            <td class="width2 ">
+                                <%= data.town %>
+                            </td>
+                            <td class="width2">
+                                <%= data.status ??"pending" %>
+                            </td>
+                        </tr>
+                        <%})%>
+                </tbody>
+            </table>
+
+        </form>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/index2.js"></script>
+</body>

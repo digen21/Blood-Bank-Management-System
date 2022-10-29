@@ -1,0 +1,56 @@
+.userbox {
+    box-sizing: border-box;
+    position: fixed;
+    margin: 5rem 10rem;
+    background: #ddd;
+    max-width: 100%;
+    width: 700px;
+    height: 50%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.heading {
+    float: right;
+    padding: 20px 50px;
+
+}
+
+.user {
+    padding: 100px 100px;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+
+}
+
+.user img {
+    width: 150px;
+    height: 150px;
+}
+
+.user .username {
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.heading {
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.heading h3 {
+    border-bottom: 1px solid red;
+    border-bottom-left-radius: 2px;
+}
+
+.userinfo {
+    margin: auto;
+}

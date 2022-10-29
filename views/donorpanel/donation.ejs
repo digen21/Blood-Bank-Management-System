@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation</title>
+    <link rel="stylesheet" href="css/req.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/err.css">
+    <link rel="stylesheet" href="font/all.css">
+    <script src="font/all.js"></script>
+</head>
+
+<body>
+
+
+
+    <header>
+        <a href="#" class="logo"><img src="/img/logo4.png" alt=""></a>
+        <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+
+        <ul class="navlist">
+            <li>
+                <form action="d_logout" method="post" style=" border: 1px solid #ddd; padding: 5px 10px;">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    <button class="dropbtn" id="click"
+                        style="color: black;font-weight: 600; padding: 5px;font-size: 1.2rem;">Logout
+                    </button>
+
+                </form>
+            </li>
+        </ul>
+    </header>
+
+    <% if(typeof message !="undefined" && message) { %>
+        <div class="alert hide" style="margin-top: 5rem ;">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span class="msg">
+                <%= message %>
+            </span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
+        </div>
+        <% }%>
+
+            <div class="sidenav" style="margin-top: 100px;">
+                <a href="/donor_dashboard">Dashboard</a>
+                <a href="/donation">Donate Blood</a>
+                <a href="">Make Request</a>
+                <a href="/recent_Donation">Recent Donation</a>
+            </div>
+
+
+
+
+            <div class="container" style="margin-top: 5rem;">
+                <div class="header">Registration</div>
+
+                <form action="/donation" method="POST">
+                    <div class="form first">
+                        <div class="details personal">
+                            <span class="title">Personal Details</span>
+
+                            <div class="fields">
+                                <div class="input-field">
+                                    <label>First Name</label>
+                                    <input type="text" name="firstname" placeholder="Tony">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Last Name</label>
+                                    <input type="text" name="lastname" placeholder="Stark">
+                                </div>
+
+
+                                <div class="input-field">
+                                    <label>Email</label>
+                                    <input type="text" name="email" placeholder="tonystark@gmail.com">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Mobile Number</label>
+                                    <input type="number" name="mob" placeholder="+91 12345 67890">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Gender</label>
+                                    <select name="gender">
+                                        <option disabled selected>Select gender</option>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                        <option>Others</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Age</label>
+                                    <input type="number" name="age" placeholder="Age > 18 ">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Weight</label>
+                                    <input type="number" name="weight" placeholder="Weight > 50">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Blood Group</label>
+                                    <select name="bloodgroup">
+                                        <option disabled selected>Select Bloodgroup</option>
+                                        <option>A+</option>
+                                        <option>AB+</option>
+                                        <option>B+</option>
+                                        <option>A-</option>
+                                        <option>B-</option>
+                                        <option>AB-</option>
+                                        <option>O+</option>
+                                        <option>O-</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Disease(If Any)</label>
+                                    <input type="text" name="disease" placeholder="Ex. Diabetes">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Donate Blood(In ML)</label>
+                                    <input type="text" name="ml" placeholder="Min 200ml - Max 500ml">
+                                </div>
+
+
+                                <div class="input-field">
+                                    <label>Address</label>
+                                    <input type="text" name="address" placeholder="Address ">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Town</label>
+                                    <input type="text" name="town" placeholder="Town">
+                                </div>
+
+                                <div class="input-field">
+                                    <label>Have You Donated Blood Last Time?</label>
+                                    <select name="lastdonated" id="lastdate">
+                                        <option disabled selected>Select</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="input-field">
+                                    <label>Last Donation Date</label>
+                                    <input type="date" id="donationdate" name="donationdate" placeholder="Select Date">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button class="nextBtn" id="click">
+                            <span class="btnText">Donate Blood</span> &nbsp; &nbsp;
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+
+
+
+            <script src="js/sweetalert.min.js"></script>
+
+            <!-- Sweet Alert Code  -->
+            <script>
+                const click = document.getElementById('click');
+
+                click.addEventListener('click', () => {
+                    swal({
+                        title: 'Registration Successfully Done! ',
+                        text: 'Keep Donating',
+                        icon: 'success',
+                        timer: 4000,
+                        buttons: false,
+                    });
+                });
+            </script>
+</body>
+
+</html>
