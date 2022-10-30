@@ -1,99 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- custom css file link  -->
     <link rel="stylesheet" href="css/payment.css">
 
 </head>
+
 <body>
 
 
-    
 
 
-<div class="container">
-    <form action="/payment" method="POST" style="margin-left: 10rem;">
-        <div class="row">
-            <div class="col">
 
-                <h3 class="title">billing address</h3>
+    <div class="container">
+        <form action="/payment" method="POST" style="margin-left: 10rem;">
+            <div class="row">
+                <div class="col">
 
-                <div class="inputBox">
-                    <span>full name :</span>
-                    <input type="text" placeholder="john deo" name="fullname">
-                </div>
-                <div class="inputBox">
-                    <span>email :</span>
-                    <input type="email" placeholder="example@example.com" name="email">
-                </div>
-                <div class="inputBox">
-                    <span>address :</span>
-                    <input type="text" placeholder="room - street - locality" name="address">
-                </div>
-                <div class="inputBox">
-                    <span>city :</span>
-                    <input type="text" placeholder="Baroda" name="city">
-                </div>
+                    <h3 class="title">billing address</h3>
 
-                <div class="flex">
                     <div class="inputBox">
-                        <span>state :</span>
-                        <input type="text" placeholder="Gujarat" name="state">
+                        <span>full name :</span>
+                        <input type="text" placeholder="john deo" name="fullname"
+                            value="<%- user.firstname %>  <%- user.lastname %>" readonly>
                     </div>
                     <div class="inputBox">
-                        <span>zip code :</span>
-                        <input type="text" placeholder="123 456" name="zip">
+                        <span>email :</span>
+                        <input type="email" placeholder="example@example.com" name="email" value="<%- user.email %>"
+                            readonly>
                     </div>
+                    <div class="inputBox">
+                        <span>address :</span>
+                        <input type="text" placeholder="room - street - locality" name="city"
+                            value="<%- user.address %>" readonly>
+                    </div>
+                    <div class="inputBox">
+                        <span>Town :</span>
+                        <input type="text" placeholder="Baroda" name="town" value="<%- user.town %>" readonly>
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>Mobile number :</span>
+                            <input type="text" placeholder="123456789" name="zip" value="<%- user.mob %>" readonly>
+                        </div>
+
+                        <!-- <div class="inputBox">
+                            <span>zip code :</span>
+                            <input type="Number" placeholder="123 456" name="zip">
+                        </div> -->
+                    </div>
+
                 </div>
 
-            </div>
-            
-            
-            <div class="col">
 
-                <h3 class="title">payment</h3>
+                <div class="col">
 
-                <div class="inputBox">
-                    <span>cards accepted :</span>
-                    <img src="img/card.png" alt="">
-                </div>
-                <div class="inputBox">
-                    <span>name on card :</span>
-                    <input type="text" placeholder="mr. john deo" name="cardname" >
-                </div>
-                <div class="inputBox">
-                    <span>credit card number :</span>
-                    <input type="number" placeholder="1111-2222-3333-4444" name="cardnumber">
-                </div>
-                <div class="inputBox">
-                    <span>exp Date :</span>
-                    <input type="text" placeholder="DD/YYYY" name="date">
-                </div>
+                    <h3 class="title">payment</h3>
+
+                    <div class="inputBox">
+                        <span>cards accepted :</span>
+                        <img src="img/card.png" alt="">
+                    </div>
+                    <div class="inputBox">
+                        <span>name on card :</span>
+                        <input type="text" placeholder="mr. john deo" name="cardname">
+                    </div>
+                    <div class="inputBox">
+                        <span>credit card number :</span>
+                        <input type="number" placeholder="1111-2222-3333-4444" name="cardnumber">
+                    </div>
+                    <div class="inputBox">
+                        <span>exp Date :</span>
+                        <input type="text" placeholder="DD/YYYY" name="date">
+                    </div>
 
                     <div class="inputBox" style="margin-top: 1.2rem;">
                         <span>CVV :</span>
                         <input type="text" placeholder="1234" name="cvv">
                     </div>
+                </div>
+
+
             </div>
 
-            <div class="col" >
-                <img src="img/payment.svg" alt="" style="margin-top: 10rem; ;" >
-            </div>
-    
-        </div>
+            <button id="btn" value="" class="submit-btn">proceed to checkout</button>
 
-        <button  id="btn" value="" class="submit-btn">proceed to checkout</button>
+        </form>
 
-    </form>
+    </div>
 
-</div>    
-    
 </body>
 
 <script src="js/sweetalert.min.js"></script>
+<script>
+    const click = document.getElementById('btn');
+
+    click.addEventListener('click', () => {
+        setTimeout(swal({
+            text: 'Payment Successful.',
+            title: "😄",
+            html: true,
+            imageWidth: 400,
+            imageHeight: 200,
+            timer: 5000,
+            showConfirmButton: false
+        }), 5000);
+    });
+
+</script>
 
 </html>

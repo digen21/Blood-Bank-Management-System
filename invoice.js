@@ -59,7 +59,7 @@ var data = {
     // Total values are being calculated automatically
     "products": [
         {
-            "quantity": 1,
+            "quantity": 2,
             "description": "<h3>A+</h3>",
             "tax-rate": null,
             "price": 1200
@@ -107,3 +107,65 @@ easyinvoice.createInvoice(data, function (result) {
 
 app.listen(6000)
 
+
+
+
+
+
+
+
+    // <tr class="heading">
+    // <td>Blood Type</td>
+    // <td>ML(Unit)</td>
+    // <td>Price</td>
+
+
+    // </tr>
+
+    // <tr class="item">
+    // <td>
+    //     <%- user.bloodgroup %>
+    // </td>
+
+    // <td>
+    //     <%- user.ml %>
+    // </td>
+
+
+
+    // <td> ₹ 1250</td>
+    // </tr>
+
+
+
+
+
+    // (async () => {
+    //     // launch a new chrome instance
+    //     const browser = await puppeteer.launch({
+    //         headless: true
+    //     })
+
+    //     // create a new page
+    //     const page = await browser.newPage()
+
+    //     // set your html as the pages content
+    //     const html = fs.readFileSync(`${__dirname}/template.html`, 'utf8')
+    //     await page.setContent(html, {
+    //         waitUntil: 'domcontentloaded'
+    //     })
+
+    //     // create a pdf buffer
+    //     const pdfBuffer = await page.pdf({
+    //         format: 'A4'
+    //     })
+
+    //     // or a .pdf file
+    //     await page.pdf({
+    //         format: 'A4',
+    //         path: `${__dirname}/my-fance-invoice.pdf`
+    //     })
+
+    //     // close the browser
+    //     await browser.close()
+    // })()

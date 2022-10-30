@@ -23,7 +23,9 @@ const insertDonor = async (req, res) => {
     await Donor.save();
     // console.log(Donor);
 
-    res.redirect('/donation')
+    setTimeout(() => {
+      res.redirect('/donation');
+    }, 3000);
 
   } catch (error) {
     if (error) {

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/invoice.css">
+    <!-- Favicon -->
+    <!-- <link rel="icon" href="img/logo2.png" type="image/x-icon" /> -->
+
+    <!-- Invoice styling -->
+
+</head>
+
+<body>
+    <div class="box">
+        <div class="invoice-box">
+            <table>
+                <tr class="top">
+                    <td colspan="2">
+                        <table>
+                            <tr style="margin-bottom: 20px;">
+                                <td class="title">
+                                    <img src="img/logo4.png" alt="Company logo" style="width: 100%; max-width: 300px" />
+                                </td>
+
+                                <td>
+                                    Invoice #: 123<br />
+                                    Created: January 1, 2015<br />
+                                    Due: February 1, 2015
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr class="information">
+                    <td colspan="2">
+                        <table>
+                            <tr>
+                                <td>
+                                    Donate Life.<br />
+                                    VV Nagar,<br />
+                                    Anand, 396445
+                                </td>
+
+                                <td>
+                                    Name: <%- user.firstname %>
+                                        <%- user.lastname %><br />
+                                            Email: <%- user.email %><br />
+                                                Mobile No. : <%- user.mob %>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+
+                <tr class="heading">
+                    <td>BloodGroup</td>
+                    <td>Ml(In Unit)</td>
+                    <td>Price(Per unit)</td>
+                    <td>Total Amount Paid</td>
+                </tr>
+
+                <tr class="item">
+                    <td>
+                        <%- user.bloodgroup %>
+                    </td>
+                    <td>
+                        <%- user.ml %>
+                    </td>
+                    <td>₹. 1100.00</td>
+                    <td id="total"></td>
+                </tr>
+
+                <tr class="total">
+                    <td></td>
+                </tr>
+            </table>
+            <div class="background">
+                <img src="/img/purchase.svg" alt="" srcset="">
+            </div>
+
+            <button class="download">Download Receipt</button></a>
+        </div>
+
+
+    </div>
+
+</body>
+<script>
+    const totalp = document.getElementById('total');
+    let mls = "<%- user.ml %>";
+    const price = 1250;
+    const total = mls * price;
+    totalp.innerHTML = `₹. ${total}`;
+    // console.log(total);
+</script>
+
+
+</html>
+
+<!-- ₹ -->

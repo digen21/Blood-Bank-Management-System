@@ -171,26 +171,19 @@
 
                 </form>
             </div>
-
-
-
-
-            <script src="js/sweetalert.min.js"></script>
-
-            <!-- Sweet Alert Code  -->
-            <script>
-                const click = document.getElementById('click');
-
-                click.addEventListener('click', () => {
-                    swal({
-                        title: 'Registration Successfully Done! ',
-                        text: 'Keep Donating',
-                        icon: 'success',
-                        timer: 4000,
-                        buttons: false,
-                    });
-                });
-            </script>
 </body>
+<script src="js/sweetalert.min.js"></script>
+<script>
+    const click = document.getElementById('click');
+    click.addEventListener('click', () => {
+        swal({
+            title: 'Registration Successfully Done! ',
+            text: 'Keep Donating',
+            icon: 'success',
+            timer: 3000,
+            buttons: false,
+        });
+    });
+</script>
 
 </html>
