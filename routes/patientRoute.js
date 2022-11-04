@@ -97,17 +97,6 @@ patientRouter.get('/generate_invoice', (req, res) => {
 
 
 
-
-
-
-// patientRouter.get('/generate_invoice', isAuth.patientAuth, (req, res) => {
-//     const userData = req.session.user;
-//     res.render("./patientpanel/invoice", { user: userData })
-
-// });
-
-// patientRouter.post('/generate_invoice', patientController.generateInvoice);
-
 patientRouter.post("/p_logout", patientController.patientLogout);
 
 module.exports = patientRouter;
