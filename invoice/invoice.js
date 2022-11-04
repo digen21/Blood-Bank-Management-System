@@ -135,3 +135,45 @@ pdf
     .catch((error) => {
         console.error(error);
     });
+
+
+
+
+
+
+
+    // (async () => {
+
+    //     const browser = await puppeteer.launch()
+    //     const page = await browser.newPage()
+
+    //     await page.goto('http://localhost:5000/generate_invoice', {
+    //         waitUntil: 'networkidle0'
+    //     })
+
+    //     const pdf = await page.pdf({
+    //         printBackground: true,
+    //         format: 'Letter'
+    //     });
+
+
+    //     const filePath = path.join(__dirname, "print.ejs")
+    //     const render = ejs.renderFile(filePath, { data: userData }, (err, html) => {
+    //         if (err) {
+    //             return res.send(err.message)
+    //         }
+
+    //         // enviar para o navegador
+    //         return res.send(html)
+    //     });
+
+    //     console.log(render);
+
+    //     writeFile("./report.pdf", pdf, {}, (err) => {
+    //         if (err) {
+    //             return console.error(err.message)
+    //         }
+    //         console.log('success!')
+    //     });
+    //     await browser.close()
+    // })();

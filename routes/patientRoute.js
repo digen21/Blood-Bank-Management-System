@@ -10,11 +10,14 @@ const ejs = require('ejs');
 const puppeteer = require('puppeteer')
 var fs = require("fs");
 
+const { writeFile } = require('fs');
+
 
 const patientController = require("../controller/Patient/patientController");
 
 //Session
 const isAuth = require("../middleware/auth");
+const { pathToFileURL } = require("url");
 
 patientRouter.use(bodyParser.urlencoded({ extended: true }));
 
@@ -22,6 +25,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(__dirname + "/public"));
+
 
 patientRouter.get("/patient_register", (req, res) => { res.render("./patientpanel/patient_reg"); });
 
@@ -49,6 +53,8 @@ patientRouter.get("/recent_req", isAuth.patientAuth, patientController.recentReq
 
 patientRouter.post('/payment', patientController.payment);
 
+
+
 patientRouter.get('/generate_invoice', (req, res) => {
 
 
@@ -58,29 +64,40 @@ patientRouter.get('/generate_invoice', (req, res) => {
     (async () => {
         // launch a new chrome instance
         const browser = await puppeteer.launch({
-            headless: true
+            headless: true,
+            args: ["--no-sandbox", "--disable-setuid-sandbox"]
         });
+
+
 
         const page = await browser.newPage();
         const filePathName = path.resolve(__dirname, '../views/patientpanel/invoice.ejs');
 
-        const html = fs.readFileSync(filePathName, 'utf8')
-        await page.goto("http://localhost:5000/generate_invoice" + html);
-        await page.setContent(html, {
-            waitUntil: 'domcontentloaded'
+        const html = fs.readFileSync(filePathName).toString();
+
+        await page.goto("http://localhost:5000/generate_invoice" + html, { waitUntil: 'networkidle0' });
+
+
+        const render = require("ejs").render(html, { user: userData });
+
+        await page.setContent(render, {
+            user: userData
         });
+
         const pdfBuffer = await page.pdf({
-            format: 'A4'
+            format: 'A4',
+
         });
 
         // or a .pdf file
-        await page.pdf({ path: "./user.pdf", format: pdfBuffer });
+        await page.pdf({ path: "./user.pdf", format: "legal", });
         await browser.close()
     })();
+});
 
 
 
-})
+
 
 
 // patientRouter.get('/generate_invoice', isAuth.patientAuth, (req, res) => {
@@ -94,3 +111,6 @@ patientRouter.get('/generate_invoice', (req, res) => {
 patientRouter.post("/p_logout", patientController.patientLogout);
 
 module.exports = patientRouter;
+
+
+

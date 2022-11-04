@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(__dirname + "/public"));
 
-
+const { writeFile } = require('fs')
 
 
 //Importing  Models
@@ -161,52 +161,6 @@ const patientLogout = async (req, res) => {
 
 
 
-const generateInvoice = async (req, res) => {
-
-  try {
-
-    const userId = req.session.user._id;
-
-    const users = await bloodRequest.find({ userId });
-    // const userData = {
-    //   user: users
-
-
-
-
-
-    // }
-    // (async () => {
-    //   const browser = await puppeteer.launch();
-    //   const page = await browser.newPage();
-    //   const filePathName = path.resolve('../../views/patientpanel/invoice.ejs');
-    //   await page.goto("http://localhost:5000/generate_invoice" + filePathName);-
-    //   await page.pdf({ path: "./sample.pdf", format: "Letter" });
-    //   await browser.close();
-    // })();
-
-
-
-
-    // (async () => {
-    //   const htmlFile = path.resolve(__dirname, '../../views/patientpanel/invoice.ejs');
-    //   const browser = await puppeteer.launch();
-    //   const page = await browser.newPage();
-    //   await page.goto('http://localhost:5000/generate_invoice' + htmlFile);
-    //   await page.pdf({ path: "./sample.pdf", format: "Letter" });
-    //   await browser.close();
-    // })();
-
-
-    res.render('./patientpanel/invoice', {
-      user: users
-    });
-  } catch (error) {
-    console.log(error);
-  }
-
-};
-
 
 
 module.exports = {
@@ -216,5 +170,5 @@ module.exports = {
   patientLogout,
   recentReq,
   payment,
-  generateInvoice
+
 };
