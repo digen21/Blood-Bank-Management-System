@@ -66,38 +66,6 @@ patientRouter.get('/generate_invoice/:id', async (req, res) => {
 
 
     res.render("./patientpanel/invoice", { user: userData });
-
-    //     //     // launch a new chrome instance
-    //     const browser = await puppeteer.launch({
-    //         headless: true,
-    //         args: ["--no-sandbox", "--disable-setuid-sandbox"]
-    //     });
-
-
-
-    //     const page = await browser.newPage();
-    //     const filePathName = path.resolve(__dirname, '../views/patientpanel/invoice.ejs');
-
-    //     const html = fs.readFileSync(filePathName).toString();
-
-    //     await page.goto("http://localhost:5000/generate_invoice" + html, { waitUntil: 'networkidle0' });
-
-
-    //     const render = require("ejs").render(html, { user: userData });
-
-    //     await page.setContent(render, {
-    //         user: userData
-    //     });
-
-    //     const pdfBuffer = await page.pdf({
-    //         format: 'A4',
-
-    //     });
-
-    //     // or a .pdf file
-    //     await page.pdf({ path: "./user.pdf", format: "legal", });
-    //     await browser.close()
-    // })();
 });
 
 
