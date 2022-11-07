@@ -67,7 +67,6 @@ patientRouter.get('/generate_invoice/:id', async (req, res) => {
 
     res.render("./patientpanel/invoice", { user: userData });
 
-    // (async () => {
     //     //     // launch a new chrome instance
     //     const browser = await puppeteer.launch({
     //         headless: true,

@@ -100,3 +100,13 @@ easyinvoice.createInvoice(data, function (result) {
     //The response will contain a base64 encoded PDF file
     console.log('PDF base64 string: ', result.pdf);
 });
+
+
+
+
+
+
+
+
+
+    // (async () => {
