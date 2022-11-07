@@ -10,7 +10,7 @@ function download(e) {
             url: `http://localhost:5000/generate_invoice/${id}`,
             success: function (res) {
                 console.log(res.message);
-                // window.location.replace(`http://localhost:5000/generate_invoice/${id}`);
+                window.location.replace(`http://localhost:5000/generate_invoice/${id}`);
             },
             error: function (error) {
                 console.log(error);
