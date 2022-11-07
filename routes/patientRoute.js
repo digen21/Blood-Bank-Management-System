@@ -4,7 +4,7 @@ const patientRouter = express.Router();
 const path = require("path");
 const bodyParser = require("body-parser");
 
-
+const bloodReq = require('../models/patient/blood_req');
 
 const ejs = require('ejs');
 const puppeteer = require('puppeteer')
@@ -55,44 +55,50 @@ patientRouter.post('/payment', patientController.payment);
 
 
 
-patientRouter.get('/generate_invoice', (req, res) => {
+patientRouter.get('/generate_invoice/:id', async (req, res) => {
 
 
-    const userData = req.session.user;
+    const id = req.params.id;
+    console.log(id);
+
+    const userData = await bloodReq.findById(id);
+    // console.log(userData);
+
+
     res.render("./patientpanel/invoice", { user: userData });
 
-    (async () => {
-        // launch a new chrome instance
-        const browser = await puppeteer.launch({
-            headless: true,
-            args: ["--no-sandbox", "--disable-setuid-sandbox"]
-        });
+    // (async () => {
+    //     //     // launch a new chrome instance
+    //     const browser = await puppeteer.launch({
+    //         headless: true,
+    //         args: ["--no-sandbox", "--disable-setuid-sandbox"]
+    //     });
 
 
 
-        const page = await browser.newPage();
-        const filePathName = path.resolve(__dirname, '../views/patientpanel/invoice.ejs');
+    //     const page = await browser.newPage();
+    //     const filePathName = path.resolve(__dirname, '../views/patientpanel/invoice.ejs');
 
-        const html = fs.readFileSync(filePathName).toString();
+    //     const html = fs.readFileSync(filePathName).toString();
 
-        await page.goto("http://localhost:5000/generate_invoice" + html, { waitUntil: 'networkidle0' });
+    //     await page.goto("http://localhost:5000/generate_invoice" + html, { waitUntil: 'networkidle0' });
 
 
-        const render = require("ejs").render(html, { user: userData });
+    //     const render = require("ejs").render(html, { user: userData });
 
-        await page.setContent(render, {
-            user: userData
-        });
+    //     await page.setContent(render, {
+    //         user: userData
+    //     });
 
-        const pdfBuffer = await page.pdf({
-            format: 'A4',
+    //     const pdfBuffer = await page.pdf({
+    //         format: 'A4',
 
-        });
+    //     });
 
-        // or a .pdf file
-        await page.pdf({ path: "./user.pdf", format: "legal", });
-        await browser.close()
-    })();
+    //     // or a .pdf file
+    //     await page.pdf({ path: "./user.pdf", format: "legal", });
+    //     await browser.close()
+    // })();
 });
 
 

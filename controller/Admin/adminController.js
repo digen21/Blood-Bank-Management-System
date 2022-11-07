@@ -4,15 +4,7 @@ const adminRouter = express.Router();
 const path = require("path");
 const bodyParser = require("body-parser");
 
-const swal = require('sweetalert2');
 
-// const toast = swal.fire({
-//   toast: true,
-//   position: 'top-end',
-//   showConfirmButton: false,
-//   timer: 3000,
-//   timerProgressBar: true,
-// });
 
 
 
@@ -197,6 +189,8 @@ const adminLogout = async (req, res) => {
     }
   });
 };
+
+
 
 module.exports = {
   getBloodGroup,

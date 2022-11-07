@@ -62,6 +62,7 @@
                         <th class="width2">Address</th>
                         <th class="width2">Town</th>
                         <th class="width2">Status</th>
+                        <th class="width3">Download Receipt</th>
 
 
                     </tr>
@@ -111,6 +112,14 @@
                             <td class="width2">
                                 <%= data.status ??"pending" %>
                             </td>
+
+                            <td class="width2 ">
+                                <% if(data.status!="pending" ){%>
+                                    <button type="button" data-id="<%= data._id %>" id="approve"
+                                        onclick="download(this)">Download Receipt
+                                    </button>
+                                    <%}%>
+                            </td>
                         </tr>
                         <%})%>
                 </tbody>
@@ -119,5 +128,5 @@
         </form>
     </div>
     <script src="js/jquery.js"></script>
-    <script src="js/index2.js"></script>
+    <script src="js/index3.js"></script>
 </body>

@@ -149,6 +149,26 @@ const payment = async (req, res) => {
 };
 
 
+const downloadInvoice = async (req, res) => {
+  const id = req.body.id;
+  console.log(id);
+
+  const userData = req.session.user;
+  console.log("userData", userData);
+
+  const user = await bloodRequest.findById(id);
+  console.log(user);
+
+  if (user) {
+    res.render('./patientpanel/invoice', { user: userData });
+
+  }
+
+
+
+
+}
+
 const patientLogout = async (req, res) => {
   req.session.destroy(function (err) {
     if (err) {
@@ -170,5 +190,5 @@ module.exports = {
   patientLogout,
   recentReq,
   payment,
-
+  downloadInvoice
 };

@@ -27,19 +27,19 @@ app.use(bodyParser.json());
 
 const admin = {
     email: process.env.ADMIN_EMAIL,
-    password:  process.env.ADMIN_PASSWORD
+    password: process.env.ADMIN_PASSWORD
 }
 
 
 //Accessing donor_login.ejs
-adminRouter.get('/admin_login', (req, res)=>{ res.render('./adminpanel/admin_login') })
+adminRouter.get('/admin_login', (req, res) => { res.render('./adminpanel/admin_login') })
 adminRouter.post("/admin_login", adminController.adminLogin);
 
 
 //Getting All The BloodGroup Totals(Perfectly)  
 adminRouter.get("/admin_dash", adminController.getBloodGroup);
 
-adminRouter.get('/donordata',adminController.getDonorData);
+adminRouter.get('/donordata', adminController.getDonorData);
 
 adminRouter.get('/patientdata', adminController.getPatientData);
 
@@ -58,7 +58,8 @@ adminRouter.post('/papprove', adminController.patientApprove);
 adminRouter.post('/preject', adminController.patientReject);
 
 
-adminRouter.post("/a_logout", adminController.adminLogout );
+
+adminRouter.post("/a_logout", adminController.adminLogout);
 
 // res.render('./adminpanel/admin_panel');
 
