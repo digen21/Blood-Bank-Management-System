@@ -13,7 +13,7 @@
 :root {
     --bg-color: #fff;
     --text-color: #000;
-    --second-color: #a09dab;
+    --second-color: #171719cf;
     --main-color: #ed2d3ad6;
     --big-font: 5rem;
     --h2-font: 3rem;
@@ -89,7 +89,7 @@ header {
 
 .logo img {
     max-width: 100%;
-    width: 120px;
+    width: 200px;
     height: auto;
     float: left;
 }
@@ -249,8 +249,19 @@ video {
 
 .home .home-img img {
     /* max-width: 100%; */
-    width: 500px;
+    width: 600px;
     height: auto;
+    border-radius: 10px;
+    /* border: 1px solid #ddd; */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.12);
+
+}
+
+
+
+.home .home-img img:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
 
 }
 
@@ -263,15 +274,18 @@ video {
 .item {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-    grid-gap: 2rem;
+    grid-gap: 3rem;
     align-items: center;
     text-align: center;
 }
 
 .sub-box {
     padding: 45px 45px 45px 45px;
-    transition: .5ease;
     cursor: pointer;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.12);
+    border-bottom: 5px solid #f04f5a;
+    border-radius: 10px;
+    transition: 0.5s all ease;
 }
 
 .sub-img img {
@@ -279,6 +293,7 @@ video {
     width: 100px;
     height: auto;
     margin-bottom: 20px;
+
 
 }
 
@@ -305,7 +320,7 @@ video {
     /* will-change: transform; */
     /* transform: perspective(1000px) rotateX(4.80deg) rotateY(10.23deg) scale3d(1.05,1.05,1.05, 1.05); */
     transform: scale(1.2);
-    transition: ease 0.2s;
+    transition: ease 0.5s;
 }
 
 
@@ -336,6 +351,8 @@ video {
     max-width: 100%;
     width: 540px;
     height: auto;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.12);
 }
 
 .about .about-txt h2 {
@@ -477,11 +494,15 @@ video {
 
 .row {
     background: #fff;
+    width: 500px;
+    height: auto;
     box-shadow: 18px 0px 87px 0px rgba(10 15 70 / 7%);
     border-radius: 12px;
     padding: 45px 45px 45px 45px;
     transition: ease .45s;
     cursor: pointer;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18), 0 1px 5px rgba(0, 0, 0, 0.18);
+    border-bottom: 5px solid #f04f5a;
 }
 
 .s img {

@@ -5,70 +5,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient Login</title>
+    <title>Patient Login | DonateLife</title>
     <link rel="stylesheet" href="homecss.css">
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/css/err.css">
-    
+    <link rel="icon" href="/img/donation.png" type="image/x-icon" />
 
 </head>
 
 <body>
     <!-- header  -->
-        <%- include('../includes/_header2.ejs')%>
-    <!-- /header -->
-    <% if(typeof message !="undefined" && message) { %>
-        <div class="alert hide">
-            <i class="fa-solid fa-circle-exclamation"></i>
-            <span class="msg">
-                <%= message %>
-            </span>
-            <div class="close-btn">
-                <span class="fas fa-times"></span>
-            </div>
-        </div>
-        <% }%>
-
-
-        <!-- login-Container  -->
-        
-            <div class="login-container">
-                <div class="img">
-                    <img src="donate.webp" alt="">
+    <%- include('../includes/_header2.ejs')%>
+        <!-- /header -->
+        <% if(typeof message !="undefined" && message) { %>
+            <div class="alert hide">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span class="msg">
+                    <%= message %>
+                </span>
+                <div class="close-btn">
+                    <span class="fas fa-times"></span>
                 </div>
-    
-                <div class="txt-content">
-                    <h2>Sign In</h2>
-                    <div class="social-icon">
-                        <a href=""><i class="fa-brands fa-facebook"></i></a>
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <% }%>
+
+
+                <!-- login-Container  -->
+
+                <div class="login-container">
+                    <div class="img">
+                        <img src="/img/patient.jpg" alt="">
                     </div>
-                </div>
-    
-                <div class="login-form">
-    
-    
-                    <form action="/patient_login" method="post">
-                    
-                        <input type="text" name="email" placeholder="example@gmail.com">
-                        <input type="text" name="password" placeholder="Password">
-                        
-                        <div class="check">
-                            <input type="checkbox" name="check" id="check">
-                            <label for="check">Remember Me?</label>
+
+                    <div class="txt-content">
+                        <h2>Sign In</h2>
+                        <div class="social-icon">
+                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
                         </div>
-    
-                        <button type="submit">Login</button>
-                        
-                    </form>
-                    
-                    <a href="">Forgot Password?</a>
-                    
+                    </div>
+
+                    <div class="login-form">
+
+
+                        <form action="/patient_login" method="post">
+
+                            <input type="text" name="email" placeholder="example@gmail.com">
+                            <input type="text" name="password" placeholder="Password">
+
+                            <div class="check">
+                                <input type="checkbox" name="check" id="check">
+                                <label for="check">Remember Me?</label>
+                            </div>
+
+                            <button type="submit">Login</button>
+
+                        </form>
+
+                        <a href="">Forgot Password?</a>
+
+                    </div>
+                    <p class="text-center">Not a member? <a href="patient_register">Sign Up</a></p>
                 </div>
-                <p class="text-center">Not a member? <a href="patient_register">Sign Up</a></p>
-            </div>
-        
-        <!-- /login-Container  -->
+
+                <!-- /login-Container  -->

@@ -1,26 +1,41 @@
-<link rel="stylesheet" href="css/sidenav.css">
-<%- include('../includes/_patientLogoutHeader.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard | DonateLife</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="icon" href="/img/donation.png" type="image/x-icon" />
+    <%- include('../includes/_patientLogoutHeader.ejs') %>
 
 
-    <div class="alert hide" style="margin-top: 10rem ;">
-        <i class="fa-solid fa-circle-exclamation"></i>
-        <span class="msg">
-            <%- user._id %>
-        </span>
-        <div class="close-btn">
-            <span class="fas fa-times"></span>
+        <div class="alert hide" style="margin-top: 10rem ;">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span class="msg">
+                <%- user._id %>
+            </span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
         </div>
-    </div>
 
 
 
-    <div class="sidenav" style="margin-top: 100px;">
-        <a href="/patient_dashboard">Dashboard</a>
-        <a href="/blood_req">Make Request</a>
-        <a href="/recent_req">Recent Request</a>
-    </div>
-    <script>
-        let userId = "<%- user.id %>";
-        console.log(userId);
-        localStorage.setItem("id", userId)
-    </script>
+        <div class="sidenav" style="margin-top: 100px;">
+            <a href="/patient_dashboard">Dashboard</a>
+            <a href="/blood_req">Make Request</a>
+            <a href="/recent_req">Recent Request</a>
+        </div>
+        <script>
+            let userId = "<%- user.id %>";
+            console.log(userId);
+            localStorage.setItem("id", userId)
+        </script>
+</body>
+
+</html>

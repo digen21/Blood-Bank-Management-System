@@ -39,9 +39,10 @@
 
 .txt-content h2 {
     font-size: 20px;
-    font-weight: 100;
+    font-weight: 600;
     margin-left: 30px;
-    font-family: sans-serif;
+    font-family: "poppins", sans-serif;
+    color: #f04f5a;
 }
 
 .reg-container .social-icon {
@@ -106,7 +107,7 @@
     padding: 10px 10px;
     border: none;
     color: white;
-    background: rgb(33, 206, 33);
+    background: linear-gradient(180deg, hsl(359, 69%, 64%), hsl(0, 90%, 61%));
     font-weight: 600;
 }
 
@@ -122,5 +123,5 @@
 
 .reg-container p a {
     text-decoration: none;
-    color: rgb(33, 206, 33);
+    color: #f04f5a
 }

@@ -1,67 +1,78 @@
-<link rel="stylesheet" href="css/sidenav.css">
-<link rel="stylesheet" href="css/homepage.css">
-<link rel="stylesheet" href="bootstrap/bt.css">
-<link rel="stylesheet" href="css/profile.css">
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- header  -->
-<%- include('../includes/_donorLogoutHeader.ejs')%>
-    <!-- /header -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard | DonateLife</title>
+</head>
 
+<body>
+    <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="bootstrap/bt.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="icon" href="/img/donation.png" type="image/x-icon" />
 
-    <div class="sidenav" style="margin-top: 100px;">
-        <a href="/donor_dashboard">Dashboard</a>
-        <a href="/donation">Donate Blood</a>
-        <a href="">Make Request</a>
-        <a href="/recent_Donation">Recent Donation</a>
-
-    </div>
-
-
-
-    <section class="vh-100">
-
-
-        <div class="userbox">
-
-            <div class="user">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp">
-                <div class="username">
-                    <h6>
-                        <%- user.username %>
-                    </h6>
-                </div>
-
-            </div>
-
-            <div class="userinfo">
-                <div class="heading">
-                    <h3>Information</h3>
-                </div>
-                <div class="email">
-                    <h6>Email</h6>
-                    <p>
-                        <%- user.email %>
-                    </p>
-                </div>
-                <div class="phone">
-                    <h6>Phone</h6>
-                    <p>123456789</p>
-                </div>
-                <div class="address">
-                    <h6>Address</h6>
-                    <p>Navsari, Gujarat</p>
-                </div>
-
-            </div>
-    </section>
+    <!-- header  -->
+    <%- include('../includes/_donorLogoutHeader.ejs')%>
+        <!-- /header -->
 
 
-    <div class="alert hide" style="margin-top: 10rem ; margin-left: 10rem;">
-        <i class="fa-solid fa-circle-exclamation"></i>
-        <span class="msg" style="background-color: black;  color: #fff;">
-            <%- user._id %>
-        </span>
-        <div class="close-btn">
-            <span class="fas fa-times"></span>
+        <div class="sidenav" style="margin-top: 100px;">
+            <a href="/donor_dashboard">Dashboard</a>
+            <a href="/donation">Donate Blood</a>
+            <a href="">Make Request</a>
+            <a href="/recent_Donation">Recent Donation</a>
+
         </div>
-    </div>
+
+        <section class="vh-100">
+            <div class="userbox">
+
+                <div class="user">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp">
+                    <div class="username">
+                        <h6>
+                            <%- user.username %>
+                        </h6>
+                    </div>
+
+                </div>
+
+                <div class="userinfo">
+                    <div class="heading">
+                        <h3>Information</h3>
+                    </div>
+                    <div class="email">
+                        <h6>Email</h6>
+                        <p>
+                            <%- user.email %>
+                        </p>
+                    </div>
+                    <div class="phone">
+                        <h6>Phone</h6>
+                        <p>123456789</p>
+                    </div>
+                    <div class="address">
+                        <h6>Address</h6>
+                        <p>Navsari, Gujarat</p>
+                    </div>
+
+                </div>
+        </section>
+
+
+        <div class="alert hide" style="margin-top: 10rem ; margin-left: 10rem;">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span class="msg" style="background-color: black;  color: #fff;">
+                <%- user._id %>
+            </span>
+            <div class="close-btn">
+                <span class="fas fa-times"></span>
+            </div>
+        </div>
+</body>
+
+</html>

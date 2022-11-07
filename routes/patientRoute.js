@@ -59,7 +59,7 @@ patientRouter.get('/generate_invoice/:id', async (req, res) => {
 
 
     const id = req.params.id;
-    console.log(id);
+    // console.log(id);
 
     const userData = await bloodReq.findById(id);
     // console.log(userData);

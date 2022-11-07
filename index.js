@@ -81,8 +81,14 @@ const adminRouter = require('./routes/adminRoute');
 app.use(adminRouter);
 
 
+//About us page
+app.get('/aboutus', (req, res) => { res.render('about'); });
+app.get('/faqs', (req, res) => { res.render('faqs'); });
+app.get('/contactus', (req, res) => { res.render('cus'); });
+
 //404 Error Page
 app.use((req, res, next) => { res.render('404page') });
+
 
 
 app.get('/test', (req, res) => {

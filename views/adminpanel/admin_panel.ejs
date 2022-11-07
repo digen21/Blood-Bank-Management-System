@@ -1,209 +1,221 @@
-<link rel="stylesheet" href="css/style3.css">
-<link rel="stylesheet" href="font/all.css">
-<script src="font/all.js"> </script>
-<link rel="stylesheet" href="css/sidenav.css">
-<link rel="stylesheet" href="css/homepage.css">
-<style>
-    h2 {
-        text-align: center;
-        color: #fff;
-        font-size: 2rem;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | DonateLife</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="css/style3.css">
+    <link rel="stylesheet" href="font/all.css">
+    <script src="font/all.js"> </script>
+    <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="icon" href="/img/donation.png" type="image/x-icon" />
+    <style>
+        h2 {
+            text-align: center;
+            color: #fff;
+            font-size: 2rem;
+        }
+    </style>
 
 
-<header>
-    <a href="#" class="logo"><img src="/img/logo4.png" alt=""></a>
-    <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+    <header>
+        <a href="#" class="logo"><img src="/img/logo4.png" alt=""></a>
+        <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
 
-    <ul class="navlist">
-        <li>
-            <form action="/a_logout" method="post" style=" border: 1px solid #ddd; padding: 5px 10px;">
+        <ul class="navlist">
+            <li>
+                <form action="/a_logout" method="post" style=" border: 1px solid #ddd; padding: 5px 10px;">
 
-                <i class="fa-solid fa-right-to-bracket"></i>
+                    <i class="fa-solid fa-right-to-bracket"></i>
 
-                <button class="dropbtn" id="click"
-                    style="color: black;font-weight: 600; padding: 5px;font-size: 1.2rem;">Logout
-                </button>
+                    <button class="dropbtn" id="click"
+                        style="color: black;font-weight: 600; padding: 5px;font-size: 1.2rem;">Logout
+                    </button>
 
-            </form>
-        </li>
-    </ul>
-</header>
-
-
-
-
-
-<div class="sidenav" style="margin-top: 100px;">
-    <a href="/admin_dash">Dashboard</a>
-    <a href="/patientdata">Patient</a>
-    <a href="/donordata">Donor</a>
-    <a href="#contact">Blood Requests</a>
-    <a href="#contact">Donation Requests</a>
-    <a href="#contact">Blood Stock</a>
-
-
-
-</div>
+                </form>
+            </li>
+        </ul>
+    </header>
 
 
 
-<div class="main" id="dash">
-    <ul class="cards">
 
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Blood Type: </h2>
-                    <h2 class="card_text">A<sup>+</sup></h2>
-                    <h2 id="h2" style="font-size: 1rem;">
-                        <%= dataList[0]%>
-                    </h2 id="h2">
+
+    <div class="sidenav" style="margin-top: 100px;">
+        <a href="/admin_dash">Dashboard</a>
+        <a href="/patientdata">Patient</a>
+        <a href="/donordata">Donor</a>
+        <a href="#contact">Blood Requests</a>
+        <a href="#contact">Donation Requests</a>
+        <a href="#contact">Blood Stock</a>
+
+
+
+    </div>
+
+
+
+    <div class="main" id="dash">
+        <ul class="cards">
+
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Blood Type: </h2>
+                        <h2 class="card_text">A<sup>+</sup></h2>
+                        <h2 id="h2" style="font-size: 1rem;">
+                            <%= dataList[0]%>
+                        </h2 id="h2">
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
 
 
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Blood Type: </h2>
-                    <h2 class="card_text">B<sup>+</sup></h2>
-                    <h2 id="h2" style="font-size: 1rem;">
-                        <%=dataList[3] %>
-                    </h2 id="h2">
-                    <!-- <button class="btn card_btn">Read More</button> -->
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Blood Type: </h2>
+                        <h2 class="card_text">B<sup>+</sup></h2>
+                        <h2 id="h2" style="font-size: 1rem;">
+                            <%=dataList[3] %>
+                        </h2 id="h2">
+                        <!-- <button class="btn card_btn">Read More</button> -->
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
 
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Blood Type: </h2>
-                    <h2 class="card_text">O<sup>+</sup></h2>
-                    <h2 id="h2" style="font-size: 1rem;">
-                        <%= dataList[6] %>
-                    </h2 id="h2">
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Blood Type: </h2>
+                        <h2 class="card_text">O<sup>+</sup></h2>
+                        <h2 id="h2" style="font-size: 1rem;">
+                            <%= dataList[6] %>
+                        </h2 id="h2">
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Blood Type: </h2>
-                    <p class="card_text">AB<sup>+</sup></p>
-                    <h2 id="h2" style="font-size: 1rem;">
-                        <%= dataList[2]%>
-                    </h2 id="h2">
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Blood Type: </h2>
+                        <p class="card_text">AB<sup>+</sup></p>
+                        <h2 id="h2" style="font-size: 1rem;">
+                            <%= dataList[2]%>
+                        </h2 id="h2">
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Blood Type: </h2>
-                    <h2 class="card_text">A<sup>-</sup></h2>
-                    <h2 id="h2" style="font-size: 1rem;">
-                        <%= dataList[1] %>
-                    </h2 id="h2">
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Blood Type: </h2>
+                        <h2 class="card_text">A<sup>-</sup></h2>
+                        <h2 id="h2" style="font-size: 1rem;">
+                            <%= dataList[1] %>
+                        </h2 id="h2">
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Blood Type : </h2>
-                    <p class="card_text">B<sup>-</sup></p>
-                    <h2 id="h2" style="font-size: 1rem;">
-                        <%= dataList[4] %>
-                    </h2 id="h2">
+            </li>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Blood Type : </h2>
+                        <p class="card_text">B<sup>-</sup></p>
+                        <h2 id="h2" style="font-size: 1rem;">
+                            <%= dataList[4] %>
+                        </h2 id="h2">
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Blood Type : </h2>
-                    <p class="card_text">O<sup>-</sup></p>
-                    <h2 id="h2" style="font-size: 1rem;">
-                        <%= dataList[7] %>
-                    </h2 id="h2">
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Blood Type : </h2>
+                        <p class="card_text">O<sup>-</sup></p>
+                        <h2 id="h2" style="font-size: 1rem;">
+                            <%= dataList[7] %>
+                        </h2 id="h2">
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Blood Type : </h2>
-                    <p class="card_text">AB<sup>-</sup></p>
-                    <h2 id="h2" style="font-size: 1rem;">
-                        <%= dataList[3] %>
-                    </h2 id="h2">
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Blood Type : </h2>
+                        <p class="card_text">AB<sup>-</sup></p>
+                        <h2 id="h2" style="font-size: 1rem;">
+                            <%= dataList[3] %>
+                        </h2 id="h2">
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
 
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><i class="fa-solid fa-database"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Total Donors </h2>
-                    <h2 style="font-size: 1rem; margin-top:3rem;" class="card_text">0</h2>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><i class="fa-solid fa-database"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Total Donors </h2>
+                        <h2 style="font-size: 1rem; margin-top:3rem;" class="card_text">0</h2>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
 
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image" style="color: green;"><i class="fa-solid fa-spinner"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Total Request </h2>
-                    <h2 style="font-size: 1rem; margin-top:3rem;" class="card_text">0</h2>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image" style="color: green;"><i class="fa-solid fa-spinner"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Total Request </h2>
+                        <h2 style="font-size: 1rem; margin-top:3rem;" class="card_text">0</h2>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image" style="color: green;"><i class="fa-solid fa-circle-check"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Approved Request </h2>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image" style="color: green;"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Approved Request </h2>
 
-                    <h2 style="font-size: 1rem; margin-top:3rem;" class="card_text">0</h2>
+                        <h2 style="font-size: 1rem; margin-top:3rem;" class="card_text">0</h2>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
-        <li class="cards_item">
-            <div class="card">
-                <div class="card_image"><i class="fa-solid fa-database"></i></div>
-                <div class="card_content">
-                    <h2 class="card_title">Total Blood Unit (In ml) </h2>
-                    <h2 style="font-size: 1rem; margin-top:3rem;" class="card_text">0</h2>
+            <li class="cards_item">
+                <div class="card">
+                    <div class="card_image"><i class="fa-solid fa-database"></i></div>
+                    <div class="card_content">
+                        <h2 class="card_title">Total Blood Unit (In ml) </h2>
+                        <h2 style="font-size: 1rem; margin-top:3rem;" class="card_text">0</h2>
 
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
 
-    </ul>
-</div>
+        </ul>
+    </div>
 
 </body>
 <script src="js/sweetalert.min.js"></script>
@@ -220,5 +232,8 @@
         })
     });
 </script>
+
+</html>
+</body>
 
 </html>

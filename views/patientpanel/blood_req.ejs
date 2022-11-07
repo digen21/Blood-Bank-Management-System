@@ -1,138 +1,148 @@
-<link rel="stylesheet" href="css/req.css">
-<link rel="stylesheet" href="font/all.css">
-<script src="font/all.js"></script>
-<link rel="stylesheet" href="css/sidenav.css">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request | DonateLife</title>
+</head>
+
+<body>
+
+    <link rel="stylesheet" href="css/req.css">
+    <link rel="stylesheet" href="font/all.css">
+    <script src="font/all.js"></script>
+    <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="icon" href="/img/donation.png" type="image/x-icon" />
 
 
-<%- include('../includes/_patientLogoutHeader.ejs') %>
+    <%- include('../includes/_patientLogoutHeader.ejs') %>
 
-    <div class="sidenav" style="margin-top: 100px;">
-        <a href="/patient_dashboard">Dashboard</a>
-        <a href="/blood_req">Make Request</a>
-        <a href="/recent_req">Recent Request</a>
-    </div>
+        <div class="sidenav" style="margin-top: 100px;">
+            <a href="/patient_dashboard">Dashboard</a>
+            <a href="/blood_req">Make Request</a>
+            <a href="/recent_req">Recent Request</a>
+        </div>
 
-    <div class="container">
-        <header>Registration</header>
+        <div class="container">
+            <header>Registration</header>
 
-        <form action="/blood_req" method="POST">
-            <div class="form first">
-                <div class="details personal">
-                    <span class="title">Personal Details</span>
+            <form action="/blood_req" method="POST">
+                <div class="form first">
+                    <div class="details personal">
+                        <span class="title">Personal Details</span>
 
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>First Name</label>
-                            <input type="text" name="firstname" placeholder="Tony">
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>First Name</label>
+                                <input type="text" name="firstname" placeholder="Tony">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Last Name</label>
+                                <input type="text" name="lastname" placeholder="Stark">
+                            </div>
+
+                            <div class="input-field">
+                                <label>DOB</label>
+                                <input type="text" name="dob" placeholder="DD/MM/YYYY">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Mobile Number</label>
+                                <input type="number" name="mob" placeholder="+91 12345 67890">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Email</label>
+                                <input type="text" name="email" placeholder="tonystark@gmail.com">
+                            </div>
+
+
+
+                            <div class="input-field">
+                                <label>Gender</label>
+                                <select name="gender">
+                                    <option disabled selected>Select gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Others</option>
+                                </select>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Age</label>
+                                <input type="number" name="age" placeholder="Age > 18 ">
+                            </div>
+
+
+                            <div class="input-field">
+                                <label>Blood Group</label>
+                                <select name="bloodgroup">
+                                    <option disabled selected>Select Bloodgroup</option>
+                                    <option>A+</option>
+                                    <option>AB+</option>
+                                    <option>B+</option>
+                                    <option>A-</option>
+                                    <option>B-</option>
+                                    <option>AB-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+                                </select>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Disease(Reason)</label>
+                                <input type="text" name="disease" placeholder="ex. Accident">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Required Blood(In ML)</label>
+                                <input type="number" name="ml" placeholder="In ml">
+                            </div>
+
+
+                            <div class="input-field">
+                                <label>City</label>
+                                <input type="text" name="address" placeholder="Address ">
+                            </div>
+
+                            <div class="input-field">
+                                <label>Town</label>
+                                <input type="text" name="town" placeholder="Town">
+                            </div>
                         </div>
 
-                        <div class="input-field">
-                            <label>Last Name</label>
-                            <input type="text" name="lastname" placeholder="Stark">
-                        </div>
 
-                        <div class="input-field">
-                            <label>DOB</label>
-                            <input type="text" name="dob" placeholder="DD/MM/YYYY">
-                        </div>
-
-                        <div class="input-field">
-                            <label>Mobile Number</label>
-                            <input type="number" name="mob" placeholder="+91 12345 67890">
-                        </div>
-
-                        <div class="input-field">
-                            <label>Email</label>
-                            <input type="text" name="email" placeholder="tonystark@gmail.com">
-                        </div>
-
-
-
-                        <div class="input-field">
-                            <label>Gender</label>
-                            <select name="gender">
-                                <option disabled selected>Select gender</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Others</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Age</label>
-                            <input type="number" name="age" placeholder="Age > 18 ">
-                        </div>
-
-
-                        <div class="input-field">
-                            <label>Blood Group</label>
-                            <select name="bloodgroup">
-                                <option disabled selected>Select Bloodgroup</option>
-                                <option>A+</option>
-                                <option>AB+</option>
-                                <option>B+</option>
-                                <option>A-</option>
-                                <option>B-</option>
-                                <option>AB-</option>
-                                <option>O+</option>
-                                <option>O-</option>
-                            </select>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Disease(Reason)</label>
-                            <input type="text" name="disease" placeholder="ex. Accident">
-                        </div>
-
-                        <div class="input-field">
-                            <label>Required Blood(In ML)</label>
-                            <input type="number" name="ml" placeholder="In ml">
-                        </div>
-
-
-                        <div class="input-field">
-                            <label>Address</label>
-                            <input type="text" name="address" placeholder="Address ">
-                        </div>
-
-                        <div class="input-field">
-                            <label>Town</label>
-                            <input type="text" name="town" placeholder="Town">
-                        </div>
+                        <button class="nextBtn" id="click">
+                            <span class="btnText">Check Out</span> &nbsp; &nbsp;
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
                     </div>
 
+            </form>
+        </div>
+</body>
+<script src="js/sweetalert.min.js"></script>
 
-                    <button class="nextBtn" id="click">
-                        <span class="btnText">Check Out</span> &nbsp; &nbsp;
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
+<!-- Sweet Alert Code  -->
+<script>
+    const click = document.getElementById('click');
 
-        </form>
-    </div>
-
-
-    </body>
-
-    <script src="js/sweetalert.min.js"></script>
-
-    <!-- Sweet Alert Code  -->
-    <script>
-        const click = document.getElementById('click');
-
-        click.addEventListener('click', () => {
-            swal({
-                title: 'Registration Successfully Done! ',
-                text: 'Keep Donating',
-                icon: 'success',
-                timer: 4000,
-                buttons: false,
+    click.addEventListener('click', () => {
+        swal({
+            title: 'Registration Successfully Done! ',
+            text: 'Keep Donating',
+            icon: 'success',
+            timer: 4000,
+            buttons: false,
+        })
+            .then(() => {
+                location.reload();
+                dispatch(redirect('../donorpanel/donation.ejs'));
             })
-                .then(() => {
-                    location.reload();
-                    dispatch(redirect('../donorpanel/donation.ejs'));
-                })
-        });
-    </script>
+    });
+</script>
 
-    </html>
+</html>

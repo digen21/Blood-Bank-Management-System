@@ -1,47 +1,3 @@
-<link rel="stylesheet" href="css/style3.css">
-<link rel="stylesheet" href="font/all.css">
-<script src="font/all.js"> </script>
-<link rel="stylesheet" href="css/sidenav.css">
-<link rel="stylesheet" href="css/homepage.css">
-<style>
-    h2 {
-        text-align: center;
-        color: #fff;
-        font-size: 2rem;
-    }
-</style>
-
-
-<header>
-    <a href="#" class="logo"><img src="/img/logo4.png" alt=""></a>
-    <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
-
-    <ul class="navlist">
-        <li>
-            <form action="/a_logout" method="post" style=" border: 1px solid #ddd; padding: 5px 10px;">
-
-                <i class="fa-solid fa-right-to-bracket"></i>
-
-                <button class="dropbtn" id="click"
-                    style="color: black;font-weight: 600; padding: 5px;font-size: 1.2rem;">Logout
-                </button>
-
-            </form>
-        </li>
-    </ul>
-</header>
-
-
-<div class="sidenav" style="margin-top: 100px;">
-    <a href="/admin_dash">Dashboard</a>
-    <a href="/patientdata">Patient</a>
-    <a href="/donordata">Donor</a>
-    <a href="#contact">Blood Requests</a>
-    <a href="#contact">Donation Requests</a>
-    <a href="#contact">Blood Stock</a>
-</div>
-
-x`
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,12 +5,53 @@ x`
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DonorData | DonateLife</title>
     <link href="css/table.css" rel="stylesheet">
     <link href="css/err.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style3.css">
+    <link rel="stylesheet" href="font/all.css">
+    <script src="font/all.js"> </script>
+    <link rel="stylesheet" href="css/sidenav.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="icon" href="/img/donation.png" type="image/x-icon" />
+    <style>
+        h2 {
+            text-align: center;
+            color: #fff;
+            font-size: 2rem;
+        }
+    </style>
 </head>
 
 <body>
+    <header>
+        <a href="#" class="logo"><img src="/img/logo4.png" alt=""></a>
+        <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+
+        <ul class="navlist">
+            <li>
+                <form action="/a_logout" method="post" style=" border: 1px solid #ddd; padding: 5px 10px;">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    <button class="dropbtn" id="click"
+                        style="color: black;font-weight: 600; padding: 5px;font-size: 1.2rem;">Logout
+                    </button>
+
+                </form>
+            </li>
+        </ul>
+    </header>
+
+
+    <div class="sidenav" style="margin-top: 100px;">
+        <a href="/admin_dash">Dashboard</a>
+        <a href="/patientdata">Patient</a>
+        <a href="/donordata">Donor</a>
+        <a href="#contact">Blood Requests</a>
+        <a href="#contact">Donation Requests</a>
+        <a href="#contact">Blood Stock</a>
+    </div>
 
     <% if(typeof message !="undefined" && message) { %>
         <div class="alert hide">
