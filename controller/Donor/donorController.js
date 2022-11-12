@@ -5,6 +5,7 @@ const login = require("../../models/donor/donor_login");
 const bgData = require("../../models/donor/bloodgroup");
 
 const bcrypt = require("bcrypt");
+const fs = require("fs");
 
 //Donation
 const insertDonor = async (req, res) => {
@@ -15,10 +16,12 @@ const insertDonor = async (req, res) => {
     console.log("user id is" + userId);
 
 
+
     const Donor = new donor({
       ...req.body, userId
     });
 
+    console.log(Donor);
 
     await Donor.save();
     // console.log(Donor);
@@ -129,5 +132,8 @@ const recentDonation = async (req, res) => {
   }
 
 }
+
+
+
 
 module.exports = { insertDonor, registerDonor, donorLogin, donorLogout, recentDonation, loadDonorInfo };

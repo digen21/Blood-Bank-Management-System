@@ -1,28 +1,31 @@
-.data{
+.data {
     margin: 5rem 15rem;
+    z-index: 1;
 }
 
 
-.width{
+
+.width {
     width: 250px;
 }
 
-.width4{
+.width4 {
     width: 110px;
 }
 
-tr:hover{
+tr:hover {
     background-color: #36304a;
     color: #fff;
 }
 
-.width2{
+.width2 {
     width: 80px;
 }
 
-.width3{
+.width3 {
     width: 160px;
 }
+
 table {
     border: 1px solid #ccc;
     border-collapse: collapse;
@@ -107,25 +110,25 @@ table th {
 }
 
 
-#approve{
+#approve {
     border-radius: 3px;
     outline: none;
     border: none;
     background-color: green;
     padding: 5px;
     color: #fff;
-    
+
 }
 
 
 
-#reject{
-margin-left: 5px;
+#reject {
+    margin-left: 5px;
     border-radius: 3px;
     outline: none;
     border: none;
     background-color: red;
     padding: 5px;
     color: #fff;
-    
+
 }

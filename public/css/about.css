@@ -7,11 +7,19 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
+
+html,
+body {
+    height: 100%;
+}
+
 .wrapper {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .background-container {
@@ -23,6 +31,7 @@
 .bg-1 {
     flex: 1;
     background: linear-gradient(180deg, hsl(359, 69%, 64%), hsl(0, 90%, 61%));
+    clip-path: polygon(86% 0, 100% 0, 100% 100%, 60% 100%);
 }
 
 /* .bg-2 {
@@ -31,7 +40,8 @@
 } */
 
 .about-container {
-    width: 85%;
+    margin-top: 3rem;
+    width: 70%;
     min-height: 80vh;
     position: absolute;
     background-color: white;

@@ -9,6 +9,7 @@ const donationSchema = new mongoose.Schema({
         required: true,
     },
 
+
     firstname: {
         type: String,
         required: true
@@ -66,6 +67,11 @@ const donationSchema = new mongoose.Schema({
         type: Date,
 
     },
+    image: {
+        data: Buffer,
+        contentType: String
+    },
+
     status: {
         type: "string",
         enum: ["approved", "pending", "rejected"],

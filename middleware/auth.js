@@ -1,3 +1,5 @@
+const { render } = require("ejs");
+
 const donorAuth = (req, res, next) => {
     if (req.session.isAuth) {
         next();
@@ -8,24 +10,25 @@ const donorAuth = (req, res, next) => {
 
 
 const adminAuth = (req, res, next) => {
-    if(req.session.isAuth){
+    if (req.session.isAuth) {
         next();
-    }else{
+    } else {
         res.redirect('/admin_login');
     }
-    
+
 };
 
 
-const patientAuth = (req, res, next) =>{
+const patientAuth = (req, res, next) => {
 
-    if(req.session.isAuth){
+    if (req.session.isAuth) {
         next();
-    }else{
+    } else {
+
         res.redirect('/patient_login');
     }
 
 }
 
 
-module.exports = { donorAuth, adminAuth, patientAuth};
+module.exports = { donorAuth, adminAuth, patientAuth };

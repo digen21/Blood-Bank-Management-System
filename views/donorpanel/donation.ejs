@@ -38,8 +38,25 @@
         </ul>
     </header>
 
-    <% if(typeof message !="undefined" && message) { %>
-        <div class="alert hide" style="margin-top: 5rem ;">
+
+
+
+    <div class="sidenav" style="margin-top: 100px;">
+        <a href="/donor_dashboard">Dashboard</a>
+        <a href="/donation">Donate Blood</a>
+        <a href="">Make Request</a>
+        <a href="/recent_Donation">Recent Donation</a>
+    </div>
+
+
+    <div class="background-container">
+        <div class="bg-1"></div>
+        <div class="bg-2"></div>
+    </div>
+
+
+    <% if(typeof message !="undefined" && message!=null ) { %>
+        <div class="alert hide" style="margin-top: 5rem;">
             <i class="fa-solid fa-circle-exclamation"></i>
             <span class="msg">
                 <%= message %>
@@ -50,17 +67,8 @@
         </div>
         <% }%>
 
-            <div class="sidenav" style="margin-top: 100px;">
-                <a href="/donor_dashboard">Dashboard</a>
-                <a href="/donation">Donate Blood</a>
-                <a href="">Make Request</a>
-                <a href="/recent_Donation">Recent Donation</a>
-            </div>
+            <div class="container" style="margin-top: 2rem;">
 
-
-
-
-            <div class="container" style="margin-top: 5rem;">
                 <div class="header">Registration</div>
 
                 <form action="/donation" method="POST">
@@ -160,6 +168,14 @@
                                     <label>Last Donation Date</label>
                                     <input type="date" id="donationdate" name="donationdate" placeholder="Select Date">
                                 </div>
+
+
+                                <!-- <div class="input-field">
+                                    <label for="">Upload Image</label>
+                                    <input type="file" id="myFile" name="image" style="border: none;">
+                                </div> -->
+
+
                             </div>
                         </div>
 
@@ -168,6 +184,7 @@
                             <span class="btnText">Donate Blood</span> &nbsp; &nbsp;
                             <i class="fa-solid fa-arrow-right"></i>
                         </button>
+
                     </div>
 
                 </form>

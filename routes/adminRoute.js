@@ -14,8 +14,11 @@ const adminController = require('../controller/Admin/adminController');
 
 
 
+
 //Session
 const isAuth = require('../middleware/auth');
+const { fstat } = require("fs");
+const imgModel = require("../models/imgModel");
 
 app.set("view engine", "ejs");
 
@@ -62,5 +65,25 @@ adminRouter.post('/preject', adminController.patientReject);
 adminRouter.post("/a_logout", adminController.adminLogout);
 
 // res.render('./adminpanel/admin_panel');
+
+adminRouter.get('/uploadphoto', (req, res) => {
+    imgModel.find({}, (err, items) => {
+        if (err) {
+            console.log(err.message);
+
+        } else {
+            res.render('./adminpanel/imgs', { items: items });
+        }
+    })
+});
+
+
+
+adminRouter.post('/uploadphoto', adminController.uploadImage);
+
+adminRouter.get('/admin', (req, res) => {
+    res.render('./adminpanel/addadmin')
+
+});
 
 module.exports = adminRouter;

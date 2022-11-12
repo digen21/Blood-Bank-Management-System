@@ -3,7 +3,7 @@ const app = express();
 const adminRouter = express.Router();
 const path = require("path");
 const bodyParser = require("body-parser");
-
+var multer = require('multer');
 
 
 
@@ -15,6 +15,10 @@ app.use(express.urlencoded({ extended: true }));
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
+app.use(bodyParser.json())
+
+
+
 
 const admin = {
   email: process.env.ADMIN_EMAIL,
@@ -24,6 +28,7 @@ const admin = {
 const donor = require("../../models/donor/donation"); //Donation
 const patinentReq = require("../../models/patient/blood_req"); //Blood Request
 const bgData = require("../../models/donor/bloodgroup");
+const imgModel = require('../../models/imgModel');
 
 
 
@@ -192,6 +197,28 @@ const adminLogout = async (req, res) => {
 
 
 
+//Image Storage
+
+
+
+
+
+const uploadImage = (req, res) => {
+  try {
+
+
+    // console.log(JSON.stringify(req.body));
+
+  } catch (error) {
+    console.log(error.message);
+  }
+
+
+};
+
+
+
+
 module.exports = {
   getBloodGroup,
   getDonorData,
@@ -202,4 +229,10 @@ module.exports = {
   patientReject,
   adminLogin,
   adminLogout,
+  uploadImage
+
 };
+
+
+
+
